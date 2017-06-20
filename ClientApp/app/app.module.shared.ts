@@ -1,14 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './components/app/app.component'
-import { NavMenuComponent } from './components/navmenu/navmenu.component';
-import { HomeComponent } from './components/home/home.component';
-import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
-import { CounterComponent } from './components/counter/counter.component';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { FetchDataComponent } from './fetchdata/fetchdata.component';
+import { CounterComponent } from './counter/counter.component';
+
+
+//services
+import { 
+    NavMenuComponent,
+
+    JwtService, 
+    AuthService 
+} from './shared';
 
 export const sharedConfig: NgModule = {
-    bootstrap: [ AppComponent ],
+    bootstrap: [AppComponent],
     declarations: [
         AppComponent,
         NavMenuComponent,
@@ -24,5 +32,9 @@ export const sharedConfig: NgModule = {
             { path: 'fetch-data', component: FetchDataComponent },
             { path: '**', redirectTo: 'home' }
         ])
+    ],
+    providers: [
+        JwtService,
+        AuthService
     ]
 };
