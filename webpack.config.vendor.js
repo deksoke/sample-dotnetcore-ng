@@ -27,6 +27,7 @@ module.exports = (env) => {
                 '@angular/router',
                 'bootstrap',
                 'bootstrap/dist/css/bootstrap.css',
+                'font-awesome/css/font-awesome.min.css',
                 'es6-shim',
                 'es6-promise',
                 'event-source-polyfill',
